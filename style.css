@@ -1,0 +1,293 @@
+/* ===============================
+   GLOBAL RESET
+=================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #121212;
+    color: white;
+}
+
+/* ===============================
+   AUTH PAGE
+=================================*/
+.auth-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1db954, #191414);
+}
+
+.auth-card {
+    background: #1e1e1e;
+    padding: 35px;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    text-align: center;
+}
+
+.auth-card h2 {
+    margin-bottom: 20px;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #2a2a2a;
+    color: white;
+}
+
+.auth-card input::placeholder {
+    color: #aaa;
+}
+
+.auth-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #1db954;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-card button:hover {
+    background: #17a44a;
+    transform: scale(1.02);
+}
+
+.error {
+    color: #ff4d4d;
+    margin-top: 10px;
+}
+
+/* ===============================
+   MAIN APP LAYOUT
+=================================*/
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===============================
+   SIDEBAR
+=================================*/
+.sidebar {
+    width: 250px;
+    background: #000;
+    padding: 20px;
+    border-right: 1px solid #222;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+    color: #1db954;
+}
+
+.sidebar p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #bbb;
+}
+
+.sidebar h3 {
+    margin: 15px 0 10px;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.sidebar button:first-of-type {
+    background: #333;
+    color: white;
+}
+
+.sidebar button:last-of-type {
+    background: #ff4d4d;
+    color: white;
+}
+
+.sidebar button:hover {
+    opacity: 0.85;
+}
+
+/* ===============================
+   MAIN CONTENT
+=================================*/
+.main {
+    flex: 1;
+    padding: 25px;
+}
+
+.main input {
+    width: 60%;
+    min-width: 200px;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #2a2a2a;
+    color: white;
+    margin-right: 10px;
+}
+
+.main button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    background: #1db954;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main button:hover {
+    background: #17a44a;
+}
+
+.main h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   LIST STYLING
+=================================*/
+ul {
+    list-style: none;
+}
+
+li {
+    background: #1e1e1e;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+li:hover {
+    background: #2a2a2a;
+}
+
+li img {
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+li button {
+    margin-left: 5px;
+    background: #333;
+    padding: 6px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+li button:hover {
+    background: #1db954;
+}
+
+/* ===============================
+   ADMIN PANEL
+=================================*/
+#adminPanel {
+    margin-top: 30px;
+    padding: 20px;
+    background: #1c1c1c;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+#adminPanel h2 {
+    color: #1db954;
+    margin-bottom: 10px;
+}
+
+#adminPanel h3 {
+    margin-top: 15px;
+}
+
+#adminPanel ul li {
+    background: #2a2a2a;
+}
+
+/* ===============================
+   MINI PLAYER
+=================================*/
+.mini-player {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    padding: 10px;
+    border-top: 1px solid #222;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+=================================*/
+@media (max-width: 900px) {
+
+    .main input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .main button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #222;
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    li button {
+        margin-top: 5px;
+    }
+
+    .mini-player {
+        position: relative;
+    }
+}

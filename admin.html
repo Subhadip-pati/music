@@ -1,0 +1,15 @@
+<h2>Admin Login</h2>
+<input type="password" id="adminPass" placeholder="Enter Admin Password">
+<button onclick="adminLogin()">Login</button>
+
+<script>
+function adminLogin(){
+    const pass = document.getElementById("adminPass").value;
+
+    if(pass === "admin123"){
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Wrong Admin Password");
+    }
+}
+</script>

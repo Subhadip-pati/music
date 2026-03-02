@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIP Music Pro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<script>
+if(!localStorage.getItem("user")){
+    window.location.href = "login.html";
+}
+</script>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>🎵 DIP Music</h2>
+        <p>Welcome, <span id="usernameDisplay"></span></p>
+
+        <h3>Playlist</h3>
+        <ul id="playlistList"></ul>
+
+        <button onclick="clearUserData()">Clear My Data</button>
+        <button onclick="logout()">Logout</button>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+        <input type="text" id="videoInput" placeholder="Paste YouTube link">
+        <button onclick="playFromLink()">Play</button>
+
+        <h3>Recently Played</h3>
+        <ul id="historyList"></ul>
+
+        <!-- ADMIN PANEL -->
+        <div id="adminPanel" style="display:none;">
+            <h2>Admin Dashboard</h2>
+            <h3>Total Users: <span id="totalUsers"></span></h3>
+            <ul id="allUsersList"></ul>
+
+            <h3>User Activity</h3>
+            <ul id="activityList"></ul>
+        </div>
+    </main>
+
+</div>
+
+<div class="mini-player">
+    <div id="player"></div>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

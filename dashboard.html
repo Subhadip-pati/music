@@ -1,0 +1,22 @@
+<h2>Admin Dashboard</h2>
+
+<h3>Registered Users</h3>
+<ul id="userList"></ul>
+
+<h3>Login History</h3>
+<ul id="historyList"></ul>
+
+<script>
+let users = JSON.parse(localStorage.getItem("users")) || [];
+let history = JSON.parse(localStorage.getItem("history")) || [];
+
+const userList = document.getElementById("userList");
+users.forEach(u => {
+    userList.innerHTML += `<li>${u.username}</li>`;
+});
+
+const historyList = document.getElementById("historyList");
+history.forEach(h => {
+    historyList.innerHTML += `<li>${h.username} - ${h.time}</li>`;
+});
+</script>
